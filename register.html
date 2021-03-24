@@ -5,11 +5,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/edca80fe33.js" crossorigin="anonymous"></script>
+
+    <!-- My Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Fruity Things - Register</title>
+    <title>FruityThings - Register</title>
 </head>
 <body>
-    
+    <div class="grid grid--login">
+        <header>
+            <nav class="nav">
+                <ul class="nav_grid">
+                    <li class="nav_grid--fullwidth nav_title f--marker"><a href="index.html"><i class="fas fa-lemon nav_logo"></i>FruityThings</a></li>
+                    <li class="nav_link"><a href="store.html">Store</a></li>
+                    <li class="nav_link"><a href="login.html">Login</a></li>
+                    <li class="nav_link"><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main">
+            <section class="section section--login_register">
+                <div class="showcase">
+                    <div class="showcase_card--login_register">
+                        <div class="showcase_card--title">
+                            <i class="fas fa-lemon showcase_card--logo"></i>
+                            <h2 class="f--marker">It's time to get fruity.</h2>
+                        </div>
+                    </div>
+                    <form action="post" class="register--form f--jet">
+                        <input type="text" id="fullname" class="register--input" placeholder="Full Name">
+                        <input type="tel" id="lastname" class="register--input" placeholder="Phone Number">
+                        <textarea id="address" class="register--input" placeholder="Address"></textarea>
+                        <input type="text" id="username" class="register--input" placeholder="Username">
+                        <input type="text" id="username" class="register--input" placeholder="Email">
+                        <input type="password" id="password" class="register--input" placeholder="Password">
+                        <button type="submit" class="register--button">Register</button>
+                    </form>
+                </div>
+            </section>
+            <footer class="footer f--source">
+                <div class="footer--about_section">
+                    <h3 class="footer--about_heading f--jet">About</h3>
+                    <p class="footer--about_bodytext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aperiam modi facilis laborum accusamus natus eligendi quasi tempore temporibus repellat eos odio, amet consequatur iste vel corrupti? Doloribus, quisquam repellat necessitatibus quaerat similique nesciunt quidem esse, aperiam beatae vel qui voluptatum quis inventore labore? Sequi quasi nostrum quis distinctio voluptas.</p>
+                </div>
+                <div class="footer--links_section">
+                    <h3 class="footer--links_heading f--jet">Links</h3>
+                    <ul class="footer--links_list">
+                        <li><a href="#" class="footer--link">About Us</a></li>
+                        <li><a href="#" class="footer--link">Contact Us</a></li>
+                        <li><a href="#" class="footer--link">Contribute</a></li>
+                        <li><a href="#" class="footer--link">Privacy Policy</a></li>
+                        <li><a href="#" class="footer--link">Sitemap</a></li>
+                    </ul>
+                </div>
+                <div class="footer--copyright_section">
+                    <p>Copyright © 2021 All Rights Reserved by FruityThings</p>
+                </div>
+                <div class="footer--social_section">
+                    <ul class="footer--social_list">
+                        <li><a class="footer--social facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a class="footer--social twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a class="footer--social dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a class="footer--social linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </footer>
+        </main>
+    </div>
 </body>
 </html>
