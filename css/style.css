@@ -1,3 +1,7 @@
+/* Importing colours.css to make variables available */
+
+@import "colours.css";
+
 /* ~~ START OF RESET ~~ */
 
 Box sizing rules *,
@@ -85,16 +89,16 @@ body {
     line-height: 1.5;
 }
 
-a:link{
-    color: white;
+a{
+    color: var(--lightGrey);
 }
 
-a:visited {
-    color: #cccccc;
+a:visited{
+    color: var(--lightGrey);
 }
 
 a:hover {
-    color: white;
+    color: var(--white);
     text-decoration: underline;
 }
 
@@ -107,6 +111,12 @@ a:hover {
     text-decoration: none;
     text-transform: uppercase;
     margin-right: 1rem;
+}
+
+.button:visited{
+    background-color: black;
+    box-shadow: 0 5px 0 grey;
+    color: white;
 }
 
 .button:hover{
@@ -140,14 +150,6 @@ a:hover {
     font-weight: 400;
 }
 
-.c--white{
-    color: white;
-}
-
-.c--black{
-    color: black;
-}
-
 /* ~~ END OF UTILS & GLOBALS ~~ */
 
 
@@ -164,6 +166,11 @@ a:hover {
     "footer footer footer";
     background: #eaeaea;
     grid-gap: 1rem;
+}
+
+.grid--home{
+    background: url("../img/KiwiEdit.png") no-repeat center;
+    background-position-y: 100px;
 }
 
 .grid--home, .grid--login{
@@ -192,7 +199,6 @@ a:hover {
 
 aside,
 article,
-main,
 header,
 footer {
     grid-column: 1 / 4;
@@ -221,12 +227,12 @@ article{
 
 .nav_grid {
     display: grid;
-    grid-template-columns: repeat(3, 10rem);
+    grid-template-columns: repeat(3, 150px);
     grid-gap: 10px;
     justify-content: center;
     justify-items: center;
     list-style: none;
-    margin: 0 50px;
+    margin: 0;
     padding: 10px;
 }
 
@@ -238,13 +244,11 @@ article{
 
 @media screen and (min-width: 1000px) {
     .nav_grid {
-        grid-template-columns: 1fr repeat(3, fit-content(50px));
+        grid-template-columns: 1fr repeat(4, min-content);
         grid-gap: 20px;
         justify-items: end;
     }
-}
 
-@media screen and (min-width: 1000px) {
     .nav_grid--fullwidth {
         /* This will make that first Home column only extend from grid line 1 to grid line 2 (on desktop) */
         grid-column: 1 / 2;
@@ -256,7 +260,7 @@ article{
 /* ~~ END OF RESPONSIVE GRID ~~ */
 
 .nav{
-    background-color: black;
+    background-color: var(--black);
 }
 
 .nav * {
@@ -265,15 +269,19 @@ article{
 
 .nav_title {
     font-size: 2rem;
-    color: black;
+    margin-left: 1rem;
+}
+
+.nav_title>a {
+    color: var(--white);
 }
 
 .nav_title>a:visited {
-    color: white;
+    color: var(--white);
 }
 
 .nav_title>a:hover {
-    color: rgb(255, 180, 110);
+    color: var(--orange);
     text-decoration: none;
 }
 
@@ -282,18 +290,21 @@ article{
 }
 
 .nav_link {
-    margin-top: 0.5rem;
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.5rem;
-    color: white;
+    line-height: 3rem;
 }
 
-.nav_link>a:hover {
-    color: #ccc;
+.nav_link>a {
+    color: var(--lightGrey);
 }
 
 .nav_link>a:visited {
-    color: white;
+    color: var(--lightGrey);
+}
+
+.nav_link>a:hover {
+    color: var(--white);
 }
 
 .article {
@@ -302,7 +313,7 @@ article{
 
 .section--home{
     grid-column: 1/4;
-    padding: 24rem 0 22rem 0;
+    padding: 28rem 0 20rem 0;
     background-image: url("/img/KiwiEdit.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -311,24 +322,44 @@ article{
 .showcase{
     display:flex;
     flex-direction: column;
-    justify-content: center;
     text-align: center;
 }
 
 .showcase--title{
     font-size: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    animation: slow-rotate 4s infinite;
 }
 
 .showcase--buttons{
     display: flex;
     flex-direction: column;
-    width: 10rem;
+    width: 8rem;
+    margin-left: 44vw;
 }
 
 .showcase--buttons > .button{
-    margin: 0;
+    margin: 15px 0 0 0;
 }
+
+.showcase--button_store{
+    color: var(--black);
+    background-color: var(--lighterGrey);
+    box-shadow: 0 5px 0 var(--darkGrey);
+}
+
+.showcase--button_store:visited{
+    color: var(--black);
+    background-color: var(--lighterGrey);
+    box-shadow: 0 5px 0 var(--black);
+}
+
+.showcase--button_store:hover{
+    color: var(--black);
+    background-color: var(--white);
+    box-shadow: 0 5px 0 var(--black);
+}
+
 
 .section--login_register{
     grid-column:2/3;
@@ -336,22 +367,64 @@ article{
 }
 
 .showcase_card--login_register{
-    background-color: #eeeeee;
+    background-color: var(--lighterGrey);
     border: 2rem solid black;
+    color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: calc(600px - 8rem);
 }
 
-.showcase_card--logo{
-    font-size: 10rem;
-    margin: 4rem 0 1rem 0;
-}
-
 .showcase_card--title{
     font-size: 2rem;
     margin-bottom: 2rem;
+}
+
+.showcase_card--logo{
+    font-size: 10rem;
+    margin: 4rem 0 1rem 0;
+    animation: yoyo 4s infinite;
+}
+
+@keyframes yoyo {
+    0%{
+        font-size: 11rem;
+    }
+    50%{
+        font-size: 12rem;
+    }
+    100%{
+        font-size: 11rem;
+    }
+}
+
+.showcase_card--title h2{
+    animation: yoyo-offset 4s infinite, slow-rotate 4s infinite;
+}
+
+@keyframes yoyo-offset {
+    0%{
+        margin-top: 1rem;
+    }
+    50%{
+        margin-top: 0;
+    }
+    100%{
+        margin-top: 1rem;
+    }
+}
+
+@keyframes slow-rotate {
+    0%{
+        transform: rotate(2deg);
+    }
+    50%{
+        transform: rotate(-2deg);
+    }
+    100%{
+        transform: rotate(2deg);
+    }
 }
 
 .login--form, .register--form{
@@ -386,7 +459,7 @@ article{
 
 .big_card--showcase {
     grid-row: 1/1;
-    border: 0.5rem solid black;
+    border: 0.5rem solid var(--black);
 }
 
 .big_thumbnail--showcase {
@@ -396,7 +469,7 @@ article{
 
 .big_card--sale {
     grid-row: 2/2;
-    border: 0.5rem solid black;
+    border: 0.5rem solid var(--black);
 }
 
 .big_thumbnail--sale {
@@ -427,7 +500,7 @@ article{
     }
 
     .section--home{
-        padding: 32rem 0 30rem 0;
+        padding: 32rem 0 24rem 0;
     }
 
     .showcase_card--title{
@@ -468,9 +541,9 @@ article{
 }
 
 .small_card {
-    background-color: black;
-    color: white;
-    border: 0.5rem solid black;
+    background-color: var(--black);
+    color: var(--white);
+    border: 0.5rem solid var(--black);
     grid-column: span 1;
     height: auto;
     display: flex;
@@ -478,20 +551,22 @@ article{
     justify-content: space-between;
 }
 
-.product_link--anchor {
+.medium_thumbnail{
+    height: 30vw;
+    object-fit: cover;
+}
+
+.product_link--anchor{
     display: contents;
+    text-align: center;
+    color: var(--lightGrey);
 }
 
 .product_title {
     flex-grow: 1;
     flex-shrink: 1;
-    flex-basis: 1;
     font-size: 4vw;
     margin: 0.6vw;
-}
-
-.product_title--text:hover {
-    color: white;
 }
 
 .product_pricing {
@@ -500,6 +575,14 @@ article{
     font-size: 3vw;
     margin: 0 0.6vw 0.6vw 0.6vw;
     user-select: none;
+}
+
+.product_pricing a{
+    text-decoration: none;
+}
+
+.product_pricing a:hover i{
+    color: var(--lime);
 }
 
 .row_2--table_section {
@@ -516,14 +599,32 @@ article{
     margin-left: 3rem;
 }
 
+.table--button{
+    background-color: var(--black);
+    box-shadow: 0 5px 0 var(--darkGrey);
+    color: var(--white);
+    padding: 0.5rem 1.5rem;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-right: 1rem;
+}
+
+.table--button:hover{
+    background-color: var(--white);
+    box-shadow: 0 5px 0 var(--black);
+    color: var(--black);
+    cursor: pointer;
+}
+
 .table_product {
     display: flex;
     justify-content: space-between;
     height: 6rem;
     font-size: 3vh;
-    background-color: black;
-    color: white;
-    border: 0.5rem solid black;
+    background-color: var(--black);
+    color: var(--white);
+    border: 0.5rem solid var(--black);
 }
 
 .table_product>* {
@@ -532,7 +633,7 @@ article{
 
 .table_product_anchor {
     display: contents;
-    color: white;
+    color: var(--white);
 }
 
 .table_product_title {
@@ -576,6 +677,11 @@ article{
         grid-template-rows: repeat(6, min-content);
         grid-gap: 1rem;
     }
+
+    .medium_thumbnail{
+        height: 10vw;
+        object-fit: cover;
+    }
     
     .row_2--sub_row{
         display: grid;
@@ -601,8 +707,8 @@ article{
     }
     
     .product_discount--text{
-        background-color: white;
-        color: black;
+        background-color: var(--white);
+        color: var(--black);
         padding: 1px 8px 1px 2px;
     }
     
@@ -674,8 +780,8 @@ article{
     grid-template-rows: auto;
     grid-gap: 1.5rem 0;
     justify-content: center;
-    background: black;
-    color: white;
+    background: var(--black);
+    color: var(--white);
     text-align: center;
 }
 
@@ -724,7 +830,7 @@ article{
 }
 
 .footer--social:hover {
-    color: white;
+    color: var(--white);
     text-decoration: none;
 }
 

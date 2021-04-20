@@ -1,0 +1,13 @@
+:root {
+    /* Primary */
+    --white: white;
+    --black: black;
+    /* Secondary */
+    --lightGrey: #ccc;
+    --lighterGrey: #eee;
+    --darkGrey: #666;
+    /* Highlights */
+    --lime: lime;
+    --orange: rgb(255, 180, 110);
+    --red: red;
+}
