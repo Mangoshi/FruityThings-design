@@ -1,4 +1,4 @@
-# AWDD Y2 CA2 - FruityThings Appstore (frontend)
+# AWDD Y2 CA2 - FruityThings Appstore
 
-## Link to Miro Board
+## Link to Miro moodboard
 https://miro.com/app/board/o9J_lWjxPdc=/
